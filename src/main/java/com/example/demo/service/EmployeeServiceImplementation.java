@@ -12,7 +12,7 @@ public class EmployeeServiceImplementation implements  EmployeeService{
     static {
         Employee e =new Employee();
         e.setName("Philip");
-        e.setAge(20);
+        e.setAge(20L);
         e.setDepartment("Backend");
         e.setEmail("philip@gmail.com");
         e.setLocation("Baghdad");
