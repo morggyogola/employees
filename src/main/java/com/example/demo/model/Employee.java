@@ -1,40 +1,30 @@
 package com.example.demo.model;
 
-import jakarta.persistence.Entity;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import jakarta.persistence.*;
+import lombok.Data;
 
-@Getter
-@Setter
-@ToString
+@Data
 @Entity
-
+@Table
 public class Employee {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "id", nullable = false)
+    private Long id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "age")
     private Long age;
+
+    @Column(name = "location")
     private String location;
+
+    @Column(name = "email")
     private String email;
+
+    @Column(name = "department")
     private String department;
-
 }
-    //public void setName(String morgan) {
-//        this.name=morgan;
-
-
-//    public void setDepartment(String backend) {
-//        this.department=backend;
-//    }
-//
-//    public void setEmail(String mail) {
-//        this.email=mail;
-//    }
-//
-//    public void setLocation(String baghdad) {
-//        this.location=baghdad;
-//    }
-//
-//    public void setAge(long l) {
-//        this.age=l;
-//    }
-

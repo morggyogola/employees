@@ -29,8 +29,9 @@ public class EmployeeController {
      return "Fetching the employee details for the id "+id;
     }
     @PostMapping("/employees")
-    public  String saveEmployee(@RequestBody Employee employees){
-       return  "saving employee details to the database"+employees;
+    public Employee saveEmployee(@RequestBody Employee employees){
+       return eService.addEmployee(employees);
+
     }
     //localhost:8081/employees?id=34
     @DeleteMapping("/employees")
