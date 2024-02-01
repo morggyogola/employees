@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class EmployeeServiceImplementation implements  EmployeeService{
+ class EmployeeServiceImplementation implements  EmployeeService{
 
    private final EmployeeRepository eRepository;
     @Autowired
@@ -33,5 +33,10 @@ public class EmployeeServiceImplementation implements  EmployeeService{
             return employee.get();
         }
         throw new RuntimeException("Employee not found for the id "+id);
+    }
+
+    @Override
+    public void deleteEmployee(Long id) {
+        eRepository.deleteById(id);
     }
 }
