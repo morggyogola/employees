@@ -39,4 +39,9 @@ import java.util.Optional;
     public void deleteEmployee(Long id) {
         eRepository.deleteById(id);
     }
+
+    @Override
+    public Employee updateEmployee(Employee employee) {
+        return eRepository.save(employee);
+    }
 }

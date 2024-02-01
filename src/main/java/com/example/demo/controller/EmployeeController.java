@@ -16,8 +16,8 @@ public class EmployeeController {
     private EmployeeService eService;
     @PutMapping("/employees/{id}")
     public Employee updateEmployee(@PathVariable Long id, @RequestBody Employee employee){
-        System.out.println("updating employee data for the id"+id);
-        return  employee;
+        employee.setId(id);
+        return  eService.updateEmployee(employee);
     }
    @GetMapping("/employees")
     public List<Employee> getEmployees(){
