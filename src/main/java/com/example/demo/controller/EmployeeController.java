@@ -25,8 +25,8 @@ public class EmployeeController {
     }
     //localhost:8081/employees/{id}
     @GetMapping("/employees/{id}")
-    public String getEmployee(@PathVariable Long id){
-     return "Fetching the employee details for the id "+id;
+    public Employee getEmployee(@PathVariable Long id){
+     return eService.getSingleEmployee(id);
     }
     @PostMapping("/employees")
     public Employee saveEmployee(@RequestBody Employee employees){
