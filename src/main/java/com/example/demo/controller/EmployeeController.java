@@ -3,6 +3,7 @@ package com.example.demo.controller;
 
 import com.example.demo.model.Employee;
 import com.example.demo.service.EmployeeService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,7 +30,7 @@ public class EmployeeController {
      return eService.getSingleEmployee(id);
     }
     @PostMapping("/employees")
-    public Employee saveEmployee(@RequestBody Employee employees){
+    public Employee saveEmployee(@Valid @RequestBody Employee employees){
        return eService.addEmployee(employees);
 
     }
