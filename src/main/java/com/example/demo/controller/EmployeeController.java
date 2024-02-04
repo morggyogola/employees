@@ -30,7 +30,8 @@ public class EmployeeController {
      return eService.getSingleEmployee(id);
     }
     @PostMapping("/employees")
-    public Employee saveEmployee(@Valid @RequestBody Employee employees){
+    public Employee saveEmployee(@Valid
+                                     @RequestBody Employee employees){
        return eService.addEmployee(employees);
 
     }
