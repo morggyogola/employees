@@ -2,6 +2,7 @@ package com.example.demo.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
@@ -18,7 +19,7 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id", nullable = false)
     private Long id;
-    @NotNull
+    @NotBlank(message = "Name should not be null")
     @Column(name = "name")
     private String name;
 
@@ -31,7 +32,7 @@ public class Employee {
     @Column(name = "email")
     private String email;
 
-    @NotNull
+    @NotBlank(message = "Department should not be null")
     @Column(name = "department")
     private String department;
 
