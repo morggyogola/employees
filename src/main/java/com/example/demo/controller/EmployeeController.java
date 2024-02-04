@@ -43,4 +43,8 @@ public class EmployeeController {
     public ResponseEntity<HttpStatus> deleteEmployee(@RequestParam Long id){
         return new ResponseEntity<HttpStatus>(HttpStatus.NO_CONTENT);
     }
+@GetMapping("/employees/filterByName")
+    public ResponseEntity <List<Employee>> getEmployeeByName(@RequestParam String name){
+        return new ResponseEntity<List<Employee>>(eService.getEmployeeByName(name),HttpStatus.OK);
+    }
 }

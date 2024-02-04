@@ -44,4 +44,9 @@ import java.util.Optional;
     public Employee updateEmployee(Employee employee) {
         return eRepository.save(employee);
     }
+
+    @Override
+    public List<Employee> getEmployeeByName(String name) {
+        return eRepository.findByName(name);
+    }
 }
