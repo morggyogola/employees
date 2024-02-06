@@ -49,4 +49,15 @@ import java.util.Optional;
     public List<Employee> getEmployeeByName(String name) {
         return eRepository.findByName(name);
     }
+    public List<Employee> getEmployeeByNameAndLocation(String name,String location){
+        return eRepository.findByNameAndLocation(name, location);
+    }
+    public List<Employee> getEmployeeByKeyword(String name){
+        return eRepository.findByNameContaining(name);
+    }
+
+    @Override
+    public List<Employee> getEmployeeByNameOrLocation(String name, String location) {
+        return eRepository.getEmployeeByNameAndLocation(name,location);
+    }
 }
