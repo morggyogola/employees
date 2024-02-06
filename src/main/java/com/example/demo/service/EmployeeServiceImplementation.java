@@ -60,4 +60,9 @@ import java.util.Optional;
     public List<Employee> getEmployeeByNameOrLocation(String name, String location) {
         return eRepository.getEmployeeByNameAndLocation(name,location);
     }
+
+    @Override
+    public Integer deleteEmployeeByName(String name) {
+        return eRepository.deleteEmployeeByName(name);
+    }
 }
